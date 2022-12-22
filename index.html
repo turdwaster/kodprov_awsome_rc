@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Awesome RC Vehicles Simulator</title>
+  </head>
+  <body>
+    <div id="sim_input_wrapper">
+      <form id="sim_form" action="submit" class="form-control-sm">
+        <h3 id="sim_title">SIMULATION INPUT</h3>
+        <div class="input-group justify-content-md-end" >
+          <div class="row">
+          <input type="text"  name="surfaceSize" class="form-control" placeholder="Size of surface. 10*10 ">
+          <input type="text" name="startingPos" class="form-control" placeholder="Starting position of vehicle. 0,0 ">
+          <input type="text" name="startingDir" class="form-control" placeholder="Starting direction of vehicle. N ">
+          <input type="text" name="commands" class="form-control" placeholder="Commands to be executed in simulation. LFRB ">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+      <button id="start_sim" class="btn btn-primary">Start simulation</button>
+    </div>
+    <canvas id="webgl"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

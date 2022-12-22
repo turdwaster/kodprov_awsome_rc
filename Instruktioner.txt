@@ -1,0 +1,27 @@
+-------------------------------------------------
+| Awesome RC Vehicles Simulerings instruktioner |
+-------------------------------------------------
+
+Projektet är byggt med Threejs och Typescript. Nodejs måste vara installerat.
+
+Efter du har klonat via Git eller unzippat zipfilen kör:
+
+npm install - Installerar alla dependencies.
+npm run dev - Kör igång dev server för simulering.
+
+Input för simulering är som följande:
+
+1. Storlek på simulerings yta. Exempel: 10*10, jag har valt att använda world space koordinaterna 0,0,0 som mittpunkt
+   i den genereade ytan. För att lyckas med detta genereras ytan från exemplet x: -5 -> 4 och z: -5 -> 4.
+   X kan man se som rader och Z som kolumner. Positiv X = N, Negativ X = S, Positiv Z = E, Negativ Z = W.
+   Ett exempel till vid yta 5*5 x: -2 -> 2 och z: -2 -> 2.
+
+2. Start position av fordon på simulerings ytan. Exempel: 0,0 för att utgå från mitten av den genererade ytan.
+
+3. Start riktning av fordon på simulerings ytan. Exempel: N, input kan vara små eller stora bokstäver.
+
+4. Kommandon som simuleringen ska utföra. Exempel: FFRRFF, input kan vara små eller stora bokstäver.
+   Simuleringen kan köras utan kommandon.
+
+Det finns ingen maxbegränsning på storleken av ytan som ska genereras men jag rekommenderar inte att generera
+en allt för stor yta. Vid 150*150 börjar min dator visa tecken på belastning, men det är ingen höjdardator.
