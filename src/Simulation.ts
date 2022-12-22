@@ -54,6 +54,7 @@ export class Simulation {
     }
 
     // Skapa html för att visa resultatet av simuleringen
+    // Namngivning; verb saknas...
     private SimulationSummary(){
         let summaryDiv = document.createElement("div");
         
