@@ -44,8 +44,11 @@ export class SimulationEnvironment {
         this.controls = new OrbitControls(this.camera, this.canvas);
         this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas! });
         
+        // Wut...? Bra att veta det grundläggande beteendet/syftet för en konstruktor.
         // Värden sätts till null vid ny instans för att enkelt kunna hantera radering av tidigare värden vid fler simuleringar.
         this.surfaceSize = surfaceSize;
+        
+        // Sen kan man så klart initiera medlemmarna inline där de definieras.
         this.surfaceGeometry = null;
         this.surfaceMesh = null;
         this.surfaceEdge = null;

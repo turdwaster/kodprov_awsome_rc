@@ -32,6 +32,7 @@ export class SimulationInput {
         this.validInput = false;
     }
 
+    // Metoden heter Get... men returnerar inget
     GetInputData() {
         const inputData = new FormData(this.form);
         this.validInput = this.ValidateInput(inputData.get('surfaceSize') as string, 
@@ -65,6 +66,7 @@ export class SimulationInput {
         const x = parseInt(position[0]);
         const z = parseInt(position[1]);
         
+        // Pluspoäng för ordentlig felhantering (I'm looking at you, Gustaf)
         if(Number.isNaN(x) || Number.isNaN(z))
             return false;
 
@@ -77,6 +79,7 @@ export class SimulationInput {
 
         // Kontrollera input för start riktning
         const validDirections = ['N','S','E','W'];
+        // Värdena lagras först och kontrolleras sen?
         this.startingDir = startingDir.toUpperCase();
         if(!validDirections.includes(this.startingDir))
             return false;

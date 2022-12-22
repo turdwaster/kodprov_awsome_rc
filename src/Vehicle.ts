@@ -61,8 +61,10 @@ export class Vehicle {
             if(!this.outOfBounds) {
                 switch(command) {
                     case 'F':
+                        // Klassisk klipp-och-klistra istället för att ursilja att det enda som skiljer är tecknet på rörelsen
                         if(this.direction === 'N' && this.position.x < this.surfaceBoundries.positiveX) {
                             this.mesh.position.x += 1;
+                            // Mer repetition...
                             (surfaceMesh?.material as any).color.set('#00ff00');
                         }
                         else if(this.direction === 'S' && this.position.x > this.surfaceBoundries.negativeX) {
@@ -116,6 +118,15 @@ export class Vehicle {
                         this.position = this.mesh.position;
                         break;
 
+                        // :-)
+                        const dirs = "NESW";
+                        let move = 0;
+                        case 'R': move = 1; break;
+                        case 'L': move = -1; break;
+                        ...
+                        this.direction = dirs[dirs.indexOf(this.direction) + move + 4) % 4];
+                        this.mesh.rotation.y -= move * Math.PI * 0.5
+                        
                     case 'R':
                         this.mesh.rotation.y -= Math.PI * 0.5;
                         if(this.direction === 'N')
