@@ -25,6 +25,7 @@ export class Simulation {
         this.summary = {successful: false, vehiclePos: new Vector3(0,0,0), vehicleDir: 'N'};
         this.startBtn = document.getElementById('start_sim')!;
 
+        // No go. `try` i fel kontext...
         try {
             this.simData.form.addEventListener('submit', (event) => {
                 event.preventDefault();
